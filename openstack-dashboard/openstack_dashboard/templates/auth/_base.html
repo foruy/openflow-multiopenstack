@@ -1,0 +1,21 @@
+{% extends "horizon/common/_modal_form.html" %}
+{% load i18n %}
+{% load url from future %}
+
+{% block modal_class %}login {% if hide %}modal hide{% endif %}{% endblock %}
+
+{% block modal-body %}
+  <fieldset>
+    {% include "horizon/common/_form_fields.html" %}
+  </fieldset>
+{% endblock %}
+
+{% block modal-footer %}
+  {% block modal-footer-submit %}
+    <a href="{% url 'login' %}" class="btn btn-default secondary cancel close" style="float:left">{% trans "Back" %}</a>
+    <button type="submit" class="btn btn-primary pull-right">{% trans "Submit" %}</button>
+  {% endblock %}
+  <!--p style="margin-top:40px;padding-top:40px;border-top:1px solid rgb(221,221,221)"><div style="font-size:12px;color:rgb(85,85,85);text-align:center">Network Virtualization & SDN Innovation</div><div style="font-size:12px;color:rgb(85,85,85);text-align:center">by  DaoliCloud Company</div><div style="font-size:12px;color:rgb(85,85,85);text-align:center">with Deep Cultivation into</div><div style="font-size:12px;color:rgb(85,85,85);text-align:center">Openflow & Openstack</div></p>
+  <p style="text-align:center;font-size:13px;margin-top:40px">&copy;2011--2015 JING ICP: 13025460</p-->
+  <script>horizon.addInitFunction();</script>
+{% endblock %}

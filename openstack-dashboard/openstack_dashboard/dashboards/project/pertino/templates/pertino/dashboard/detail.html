@@ -1,0 +1,142 @@
+{% load i18n sizeformat parse_date %}
+{% load url from future %}
+<style>
+#mainbody{
+        font-family:Verdana, Arial, Helvetica, sans-serif;
+        width:100%;
+        height:650px;
+	margin:0 auto;
+}
+#up-part{
+	width:80%;
+	height:35%;
+	margin:0 auto;
+}
+
+#down-part{
+	width:80%;
+	height:40%;
+	margin:0 auto;
+	margin-top:10%;
+	border:1px solid #ccc;
+	border-radius: 15px;
+}
+
+.detail-card{
+	width:30%;
+	height:100%;
+	float:left;
+	cursor: pointer;
+	background:#008da8;
+	margin-top: 40px;
+	color: #fff;
+	text-align: center;
+	border-radius: 15px;
+	overflow: hidden;
+	border: none;
+	outline: 0;
+	line-height: normal;
+}
+
+#device-card{
+	margin-left:5%;
+	background:#f7a71a;
+}
+#people-card{
+}
+#total-card{
+	margin-left:5%;
+	background:#95ca4c;
+}
+.quota-card{
+	width:30%;
+        height:100%;
+        float:left;
+        text-align: center;
+}
+.dev-type img{
+	float:left;
+	width:72px;
+	height:72px;
+	margin-top:40%;
+	margin-left:30%;
+	vertical-align:bottom;
+}
+.quota-card p{
+	float:left;
+	margin-top:50%;
+	margin-left:2%;
+	color:#333;
+	font-size:30px;
+	font-weight:bold;
+}
+.box-header{
+	height:50%;
+	line-height:100px;
+	font-size:74px;
+}
+.box-footer{
+	height:40%;
+	font-size:20px;
+	background-color:#000;
+	filter:alpha(opacity=50);  
+	-moz-opacity:0.5;  
+	-khtml-opacity: 0.5;  
+	opacity: 0.5;
+	line-height:70px;
+}
+.detail-card a{
+	color:#fff;
+	text-decoration:none;
+}
+
+
+
+.dev-type{
+}
+
+</style>
+<div id="mainbody">
+	<div id="up-part">
+		<div class="detail-card" id="people-card">	
+		  	<a class="box-view" id="people-online" href="/dashboard/project/pertino/?tab=pertino__peopleview">
+				<h1 class="box-header">{{ people_online }}</h1>
+				<h3 class="box-footer">MEMBERS ONLINE</h3>
+			</a>
+		</div>
+
+		<div class="detail-card" id="device-card">	
+		  	<a class="box-view" id="devices-online" href="/dashboard/project/pertino/?tab=pertino__deviceview">
+				<h1 class="box-header">{{ device_online }}</h1>
+				<h3 class="box-footer">DEVICES ONLINE</h3>
+			</a>
+		</div>
+		<div class="detail-card" id="total-card">	
+		  	<a class="box-view" id="total-devices" href="/dashboard/project/pertino/?tab=pertino__deviceview">
+				<h1 class="box-header">{{ total }}</h1>
+				<h3 class="box-footer">TOTAL DEVICES</h3>
+			</a>
+		</div>
+	</div>
+
+
+	<div id="down-part">
+		<div class="quota-card">
+			<span class="dev-type" id="quota-windows"><img src="/static/dashboard/img/windows.png"></span>
+			<p>{{ windows_quota }}%</p>	
+		</div>
+		<div class="quota-card">
+			<span class="dev-type" id="quota-linux"><img src="/static/dashboard/img/linux.png"></span>
+			<p>{{ linux_quota }}%</p>	
+			
+		</div>
+		<div class="quota-card">
+			<span class="dev-type" id="quota-android"><img src="/static/dashboard/img/android.png"></span>
+			<p>{{ android_quota }}%</p>	
+			 
+		</div>
+	</div>
+</div>
+
+
+

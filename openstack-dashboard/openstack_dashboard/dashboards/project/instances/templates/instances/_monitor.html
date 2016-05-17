@@ -1,0 +1,27 @@
+{% extends "horizon/common/_modal_form.html" %}
+{% load i18n %}
+{% load url from future %}
+
+{% block form_id %}choice_zone_form{% endblock %}
+
+{% block modal-header %}{% trans "Monitor Instance" %}{% endblock %}
+{% block modal_id %}choice_zone_modal{% endblock %}
+
+{% block modal-body %}
+<div class="left">
+	<div id="monitor-cpu">
+		<h4> Monitor CPU </h4>
+	</div>
+</div>
+
+<div class="right">
+	<div id="monitor-memory">
+		<h4> Monitor Memory </h4>
+	</div>	
+</div>
+{% endblock %}
+
+
+{% block modal-footer %}
+<a href="{% url "horizon:project:instances:index" %}" class="btn secondary cancel close">{% trans "Cancel" %}</a>
+{% endblock %}

@@ -1,0 +1,34 @@
+<svg id="topology_canvas" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <desc>Network Toplogy</desc>
+  <image x="45%" y="0" xlink:href="{{ STATIC_URL }}daoli/images/public-network.png" height="78" width="98" />
+  <rect rx="2" ry="2" fill="#59cbdb" x="0" y="78" width="100%" height="5" />
+</svg>
+
+<svg id="dly_topology_template" display="none">
+  <g class="dly_subnet">
+    <rect rx="2" ry="2" class="dly_subnet_rect" fill="#8541B5" x="0" y="10" width="20" />
+    <text x="50" y="-5" class="dly_subnet_cidr" transform="rotate(90 0 0)" style="font-weight: bold; font-size: 12px; fill: #FFF">0.0.0.0/0</text> 
+  </g>
+  <g class="dly_service">
+      <g transform="translate(180 55)" type="vrouter" data-id="" class="dly_router">
+        <rect x="0" y="0" rx="2" ry="2" fill="transparent" width="75" height="58" stroke="#d5dee2" stroke-width="1" />
+        <text x="35" y="14" text-anchor="middle">VRouter</text>
+        <image x="25" y="15" preserveAspectRatio="none" width="25" height="25" xlink:href="{{ STATIC_URL }}daoli/images/vrouters.png" />
+        <text x="10" y="50" class="dly_router_addr" style="font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px" fontSize="13" fontFamily="Arial, Helvetica" fill="#323232" text-anchor="middle">
+        </text>
+        <path d="M 35 -50 L 35 0" stroke="#59cbdb" stroke-width="2" zIndex="0" />
+        <path class="dly_r_line" d="M 35 58 L 35 125" stroke="#59cbdb" stroke-width="2" zIndex="0" />
+      </g>
+      <g class="dly_idc" transform="translate(40 55)" type="service" data-id="">
+        <rect x="100" y="125" rx="2" ry="2" fill="transparent" width="180" height="120" stroke="#d5dee2" stroke-width="1" />
+      </g>
+  </g>
+  <g class="dly_service_subnet">
+    <g class="dly_ss_ball">
+      <rect x="100" y="155" class="dly_ss_rect" rx="2" ry="2" fill="#59cbdb" width="180" height="5" style="cursor:pointer" />
+      <text x="265" y="160" class="dly_ss_gt" fill="#59cbdb" style="font-weight: bold; font-size: 10px; cursor: pointer">&gt;&gt;</text>
+      <text x="180" y="150" class="dly_ss_text" style="font-weight: bold; font-size: 12px; fill: #000; text-anchor: middle">0.0.0.0/0</text>
+    </g>
+    <path class="dly_ss_path" d="M -20 155 L 100 155" stroke="#59cbdb" stroke-width="2" stroke-dasharray="5 5" />
+  </g>
+</svg>

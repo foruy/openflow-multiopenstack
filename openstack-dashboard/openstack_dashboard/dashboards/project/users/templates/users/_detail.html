@@ -1,0 +1,23 @@
+{% extends "horizon/common/_modal_form.html" %}
+{% load i18n %}
+{% load url from future %}
+
+{% comment %}
+{% block form_id %}detail_consump_modal{% endblock %}
+{% block form_action %}{% url 'horizon:project:users:index' %}{% endblock %}
+{% block form_class %}{{ block.super }} horizontal{% endblock %}
+
+{% block modal_id %}detail_consump_modal{% endblock %}
+{% block modal-header %}{% trans "Detail" %}{% endblock %}
+
+{% block modal-body %}
+    <h3>{% trans "Detail" %}</h3>
+    <fieldset>
+    {% include "horizon/common/_form_fields.html" %}
+    </fieldset>
+{% endblock %}
+{% endcomment %}
+
+{% block modal-footer %}
+    <a href="{% url 'horizon:project:users:index' %}" class="btn secondary cancel close">{% trans "Cancel" %}</a>
+{% endblock %}

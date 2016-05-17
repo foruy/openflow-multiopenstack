@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Add People" %}{% endblock %}
+
+{% block page_header %}
+  {% include "horizon/common/_page_header.html" with title=_("Add People") %}
+{% endblock %}
+
+{% block main %}
+  {% include "project/pertino/people_view/_add.html" %}
+{% endblock %}

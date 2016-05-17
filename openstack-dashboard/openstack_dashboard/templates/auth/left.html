@@ -1,0 +1,21 @@
+<style>
+	.installation{font-size:14px;line-height:18px;display:none;}
+    /*.download_node li {height: 35px;}*/
+    .download_node{float:left;width:60%}
+    .download_node a{line-height:40px;}
+    .demo{float:left;margin-top:280px;}
+	img{margin-bottom:20px;margin-top:15px;}
+	h3{margin-bottom:16px;margin-top:15px;}
+</style>
+      <h3>Build, Ship, Run Any Cloud, Any Scale</h3>
+	
+	<ul class="download_node">
+		<li>Network Topology</li>
+		<img src="{{ STATIC_URL }}daoli/images/topolog.jpg" />
+		<li><a href="{{ STATIC_URL }}download/README.html">Deployment Instruction</a></li>
+		<li><a href="{{ STATIC_URL }}download/webportal-1.0.tar.gz">Download Controller Node</a></li>
+		<li><a href="{{ STATIC_URL }}download/ship-allinone-1.0.tar.gz">Download Resource Node</a></li>
+	</ul>
+    <div class="demo">
+      <a href="{{ STATIC_URL }}box/swf/Deployment-{% ifequal lang 'zh-cn' %}cn{% else %}en{% endifequal %}.flv" rel="vidbox 960 600" title="Deployment Demo" class="btn btn-default secondary cancel" style="opacity: 0.7;font-weight: bold;">Deployment Demo</a>
+    </div>

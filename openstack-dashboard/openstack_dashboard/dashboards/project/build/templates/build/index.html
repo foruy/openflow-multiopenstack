@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans "Build, Ship & Run" %}{% endblock %}
+
+{% block page_header %}
+{% include "horizon/common/_page_header.html" with title=_("Build, Ship & Run Your Own Cloud Anywhere") %}
+{% endblock page_header %}
+
+{% block main %}
+{% include 'project/build/_index.html' %}
+{% endblock %}

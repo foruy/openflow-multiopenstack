@@ -1,0 +1,35 @@
+{% extends "horizon/client_side/template.html" %}
+{% load horizon %}
+
+{% block id %}balloon_server{% endblock %}
+
+{% block template %}
+{% jstemplate %}
+<!--div class="serverTableHeader">
+  <div class="title">[[idc_label]]</div>
+</div-->
+<table class="table table-bordered table-striped datatable">
+  <thead>
+    <tr class="table_caption">
+      <th class="table_header" colspan="3" data-column="0">
+        <h4 class="table_title">[[idc_label]]</h4>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    [[#server]]
+    <tr>
+      <td>[[name]]</td>
+      <td>[[address]]</td>
+      <td>
+        <span class="[[status_css]]">[[status]]</span>
+      </td>
+    </tr>
+    [[/server]]
+    [[^server]]
+      <tr><td>No instances.</td></tr>
+    [[/server]]
+  </tbody>
+</table>
+{% endjstemplate %}
+{% endblock %}

@@ -1,0 +1,212 @@
+{% load i18n %}
+
+
+<div class="draw">
+    <div id="tool" style="margin-bottom:12px">
+        <i><button id="cursor" title="{% trans "Pointer " %}"></button></i>
+        <i><button id='scissor' title="{% trans "Cut" %}"></button></i>
+        <i><button id='line' title="{% trans "Connect" %}"></button></i>
+        <span class="separate_line" style="display:none"></span>
+        {% for image in vm_images %}
+        <i>
+          <div class="tool_{{ image.class }} gui_drag" image_id="{{ image.image_id }}"  image_name="{{ image.name }}" image_type="{{ image.type }}" image_category="{{ image.category }}"></div>
+        </i>   
+        {% endfor %}
+        <span class="separate_line"></span>
+        {% for image in container_images %}
+         <i>
+          <div class="tool_{{ image.class }} gui_drag" image_id="{{ image.image_id }}"  image_name="{{ image.name }}" image_type="{{ image.type }}" image_category="
+ {{ image.category }}"></div>     
+          </i>
+        {% endfor %}
+
+        <i id="toolAce"></i>
+        <i id="toolTip"></i>
+    </div>
+
+    <div id="roll">
+        <div id="roll_button">
+            <div id="roll_buttonN" title="{% trans "Up" %}"></div>
+            <div id="roll_buttonW" title="{% trans "Left" %}"></div>
+            <div id="roll_buttonE" title="{% trans "Right" %}"></div>
+            <div id="roll_buttonS" title="{% trans "Down" %}"></div>
+        </div>
+
+        <div id="roll_slider">
+            <div id="slider_plus"></div>
+            <div id="slider" class="slider_center"></div>
+            <div id="slider_minus"></div>
+        </div>
+    </div>
+
+    {% comment %}
+    <div id="image_infos">
+        <table>
+            <tr>
+                <td id="image_vm">
+                    <img src="/static/dashboard/img/gui_pc.png"></td>
+                <td class="image_name">VM</td>
+            </tr>
+            <tr>
+                <td id="image_docker">
+                    <img src="/static/dashboard/img/gui_container.png"></td>
+                <td class="image_name">Container</td>
+            </tr>
+        </table>
+    </div>
+{% endcomment %}
+
+    <div id="play" class="playShow"></div>
+</div>
+
+<div id="message_box">
+    <div class="inputinfo">
+        <input type="hidden" name="csrfmiddlewaretoken" value="qMtNlzHLkjOrfk98IFVuagsTrwZTpzaO" id="id_csrfm">
+        <input type="hidden" name="source_type" value="image_id" id="id_source_type">
+        <input type="hidden" name="availability_zone" value="****" id="id_availability_zone">
+        <input type="hidden" name="image_id" value="*****" id="id_image_id">
+        <lable>
+            <span>{% trans "Data Center" %}*</span><br />
+            <select id="id_dc" name="dc" class="tool_select"></select>
+        </lable>
+        <p class="msg" id="id_dc_msg">{% trans "Please choose" %}</p>
+
+        <lable>
+            <span>{% trans "Instance Name" %}*</span><br />
+            <input type="text" class="text" id="id_name" name="name" placeholder="{% trans "3 - 25 characters" %}" />
+        </lable>
+        <p class="msg" style="font-size:12px;" id="id_name_msg" myerror="{% trans "Must be Alphanumerical prefixing with a letter in [a-z, A-Z]" %}">&nbsp;</p>
+
+        <lable>
+        <span>{% trans "Instance Count" %}*</span><br />
+        <input type="number" class="text" id="id_count" name="count" min="1" value="1" required="required" placeholder="{% trans "Must be the positive integer" %}">
+		</lable>
+        <p class="msg" id="id_count_msg">{% trans "Must be the positive integer" %}</p>
+		{% comment %}
+        <lable>
+        <span>{% trans "Choose Logical IP Subnet" %}</span><br />
+        <input type="text" class="text" id="id_ip_address" name="ip_address" required="required" placeholder="{% trans "Default subnet 192.168/24" %}"></lable>
+
+        <p class="msg" id="id_ip_address_msg" style="font-size:12px;">{% trans "Other subnets must be 172.16-131/16 or 10/8"%}</p>
+		{% endcomment %}
+
+        <lable>
+            <span>{% trans "Choose Network Segmentation" %}*</span><br />
+            <select id="id_net_type" name="net_type" class="tool_select" >
+            {% comment %}
+                    <option value="1">192.168.0.0/16</option>
+                    <option value="2">172.16.0.0/12</option>
+                    <option value="3">10.0.0.0/8</option>
+            {% endcomment %}
+            {% for nt in netypes %}
+                <option value="{{nt.id}}">{{nt.cidr}}</option>
+            {% endfor %}
+            </select>
+        </lable>
+        <p class="msg" id="id_net_type">{% trans "Incorrect format" %}</p>
+
+        <lable>
+            <span>{% trans "Flavor" %}*</span><br />
+            <select id="id_flavor" name="flavor" class="tool_select"></select>
+        </lable>
+        <p class="msg" id="id_flavor_msg">{% trans "Please choose the flavor" %}</p>
+
+         <!--lable>
+            <span>{% trans "Add a disk" %}</span><br />
+            <input type="checkbox" id="id_boot_source" />
+        </lable-->
+
+        <p class="msg" id="id_boot_source_msg">{% trans "Please choose the flavor" %}</p>
+
+        <div id="id_device">
+            <lable>
+                <span>{% trans "Device Name" %}*</span>
+                <input type="text" class="text" id="id_device_name" name="device_name" value="volume" placeholder="{% trans "volume name" %}" />
+            </lable>
+            <p class="msg" style="font-size:12px;" id="id_device_name_msg" myerror="{% trans "Must be Alphanumerical prefixing with a letter in [a-z, A-Z]" %}">&nbsp;</p>
+
+            <lable>
+                <span>{% trans "Device Size(GB)" %}*</span>
+                <input type="text" class="text" id="id_device_size" name="device_seze" value="1" placeholder="{% trans " Must be an integer in 1-100"%}" />
+            </lable>
+            <p class="msg" id="id_device_size_msg">{% trans "Must be an integer in 1-100" %}</p>
+
+            <lable class="hidden">
+                <span>{% trans "Backup" %}</span>
+                <input type="checkbox" id="id_is_backup" />
+            </lable>
+        </div>
+    </div>
+
+    <div class="inputsure">
+        <button id="id_sure" class="inputbuttons">{% trans "Launch" %}</button>
+        <button id="id_cancel" class="inputbuttons">{% trans "Cancel" %}</button>
+    </div>
+</div>
+
+<div id="tip" class="hidden">
+    <table id="info">
+        <tr><td class="atr hidden" id="node_id"></td></tr>
+        <tr><td class="atr">{% trans "Name" %}</td><td class='val' id="node_name"></td></tr>
+        <tr><td class="atr">{% trans "Service Name" %}</td><td class='val' id="node_server_name"></td></tr>
+        <tr><td class="atr">{% trans "Logical IP" %}</td><td class='val' id="node_ip"></td></tr>
+        <tr><td class="atr">{% trans "Gateway IP" %}</td><td class='val' id="node_gip"></td></tr>
+        <tr id="node_wordpress"><td class="atr">{% trans "WordPress Port" %}</td><td class='val' id="node_wordpress_port"></td></tr>
+        <tr id="node_webservice"><td class="atr">{% trans "WebService Port" %}</td><td class='val' id="node_webservice_port"></td></tr>
+        <tr><td class="atr">{% trans "SSH Port" %}</td><td class='val' id="node_port"></td></tr>
+        <tr><td class="atr">{% trans "Data Center" %}</td><td class='val' id="node_dc"></td></tr>
+        <tr><td class="atr">{% trans "Status" %}</td><td class='val' id="node_status"></td></tr>
+
+        <tr class="hidden" id="disk-name-tr"><td class="atr" >{% trans "Disk Name" %}</td><td class='val' id="disk-name"></td></tr>
+        <tr class="hidden" id="disk-size-tr"><td class="atr" >{% trans "Disk Size" %}</td><td class='val' id="disk-size"></td></tr>  
+    </table>
+
+   <div class="machines" style="width: 280px">
+      <div class="start_stop_checkbox">
+            <span> {% trans "OFF" %}</span>
+            <span>
+              <div class="gui_button">
+                <input type="checkbox" id="gui_check" />
+                <label><i></i></label>
+              </div>
+            </span>
+            <span> {% trans "ON" %}</span>
+      </div>
+
+        <div class="gui_button_delete" style="margin-right:21px;margin-top:-18px;float:right;" >
+            <input type="button" id="gui_button_delete" value="delete" />
+            <label><img src="/static/dashboard/img/bin.png" /></label>
+        </div>
+    </div>
+  </div>
+
+
+  <div class="hidden" id="sure_info" my_title="{% trans "Confirm Delete Instance" %}">  
+    <div id="warning_img">
+      <img src="/static/dashboard/img/warning.png" />
+    </div>
+    <div>
+      <p>{% trans "Warning： Delete cannot be undone! If this instance has a data disk, the data disk will be also deleted. Are you sure you want to delete?" %}</p>
+      <p>{% trans "Occasionally you may need to refresh page after deleting to correct page disintegration." %}</p>
+    </div>
+
+    <div id="delete-passwd" class="hidden">
+        Password:
+        <input type="password" id="passwd" value="">
+    </div>
+    <div id="error-passwd" error-empty="{% trans "The password MUST NOT be empty!"%}" error-noempty="{% trans "The password is wrong!" %}">
+        <p> Placeholder </p>
+    </div>
+
+    <div id="button_delete_sure">
+       <p id="button-delete-sure-p">
+          <input type="button" value="{% trans "Cancel" %}" id="gui_button_delete_no" > &nbsp;&nbsp;
+          <input type="button" value="{% trans "Delete" %}" id="gui_button_delete_yes"></p>
+      </div>
+
+    </div>
+
+<div id="gui_model"></div>
+<div id="gui_loading"></div>
+<script src='/static/daoli/jquery.cookie.js' type="text/javascript"></script>
+<script type="text/javascript" src="/static/daoli/gui.js"></script>

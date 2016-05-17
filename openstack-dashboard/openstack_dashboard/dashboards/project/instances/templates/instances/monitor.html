@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans "Monitor instance" %}{% endblock %}
+
+{% block page_header %}
+  {% include "horizon/common/_page_header.html" with title=_("Monitor instance") %}
+{% endblock page_header %}
+
+{% block main %}
+  {% include 'project/instances/_monitor.html' %}
+{% endblock %}

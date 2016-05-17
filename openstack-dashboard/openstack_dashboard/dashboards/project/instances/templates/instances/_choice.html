@@ -1,0 +1,22 @@
+{% extends "horizon/common/_modal_form.html" %}
+{% load i18n %}
+{% load url from future %}
+
+{% block form_id %}choice_zone_form{% endblock %}
+
+{% block modal-header %}{% trans "Choice of Openstack" %}{% endblock %}
+{% block modal_id %}choice_zone_modal{% endblock %}
+
+{% block modal-body %}
+<div class="left">
+    <fieldset>
+      {% for zone in zones %}
+        <p style="font-weight:bold">{% if zone.disabled %}{{ zone.name }}{% trans "(Quota exceeded)" %}{% else %}<a class="ajax-modal btn-edit disabled" href="{% url 'horizon:project:instances:launch' zone.id %}">{{ zone.name }}</a><img src="{{ STATIC_URL }}dashboard/img/figure.png" style="margin-left:6px;height:15px" alt="{{ zone.name }}" />{% endif %}</p>
+      {% endfor %}
+    </fieldset>
+</div>
+{% endblock %}
+
+{% block modal-footer %}
+  <a class="btn btn-default cancel">Cancel</a>
+{% endblock %}

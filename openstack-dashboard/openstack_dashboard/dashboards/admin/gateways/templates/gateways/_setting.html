@@ -1,0 +1,26 @@
+{% extends "horizon/common/_modal_form.html" %}
+{% load i18n %}
+{% load url from future %}
+
+{% block form_id %}setting_gateway_form{% endblock %}
+{% block form_action %}{% url "horizon:admin:gateways:setting" gateway_id %}{% endblock %}
+
+{% block modal_id %}setting_gateway_modal{% endblock %}
+{% block modal-header %}{% trans "Setting Gateway" %}{% endblock %}
+
+{% block modal-body %}
+<div class="left">
+  <fieldset>
+    {% include "horizon/common/_form_fields.html" %}
+  </fieldset>
+</div>
+<div class="right">
+  <h3>{% trans "Description:" %}</h3>
+  <p>{% trans "Select the gatway device." %}</p>
+</div>
+{% endblock %}
+
+{% block modal-footer %}
+  <input class="btn btn-primary pull-right" type="submit" value="{% trans "Setting Gateway" %}" />
+  <a href="{% url "horizon:admin:gateways:index" %}" class="btn btn-default secondary cancel close">{% trans "Cancel" %}</a>
+{% endblock %}

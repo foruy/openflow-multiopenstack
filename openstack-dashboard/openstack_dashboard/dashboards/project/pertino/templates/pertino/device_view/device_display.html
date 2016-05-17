@@ -1,0 +1,54 @@
+	{% for device in display_list %}
+	<li class="dev-display" id="{{ device.id }}">
+	{% ifequal device.type 'windows' %}
+		{% ifequal device.status 'online' %}	
+			<img src="/static/dashboard/img/pc-windows-on.png"/>
+		{% endifequal %}
+		{% ifequal device.status 'offline' %}	
+			<img src="/static/dashboard/img/pc-windows-off.png"/>
+		{% endifequal %}
+	{% endifequal %}
+
+	{% ifequal device.type 'linux' %}
+		{% ifequal device.status 'online' %}	
+			<img src="/static/dashboard/img/pc-linux-on.png"/>
+		{% endifequal %}
+		{% ifequal device.status 'offline' %}	
+			<img src="/static/dashboard/img/pc-linux-off.png"/>
+		{% endifequal %}
+	{% endifequal %}
+		
+	{% ifequal device.type 'android' %}
+		{% ifequal device.status 'online' %}	
+			<img src="/static/dashboard/img/android-on.png"/>
+		{% endifequal %}
+		{% ifequal device.status 'offline' %}	
+			<img src="/static/dashboard/img/android-off.png"/>
+		{% endifequal %}
+	{% endifequal %}
+
+	<p>{{ device.name }}</p>
+	</li>
+	{% endfor %}
+<script>
+        //显示device的详细信息  
+        $("li.dev-display").click(function(){
+        console.log("111111111111111111");
+        console.log(this.id);
+        console.log("111111111111111111");
+        detail_url="/dashboard/project/pertino/device_detail/"+this.id+"/";     
+            $.ajax({
+                type: "get",  //提交方式
+                dataType: "text", //数据类型
+                url: detail_url, //请求url
+                success: function (data) { //提交成功的回调函数
+                    if(data.length >0)
+                    {
+                         $(this).append(data);//替换html
+                    }
+                }
+            });
+        
+        
+        });
+</script>

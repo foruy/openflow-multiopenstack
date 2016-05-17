@@ -1,0 +1,17 @@
+{% extends "horizon/client_side/template.html" %}
+{% load horizon %}
+
+{% block id %}balloon_container{% endblock %}
+
+{% block template %}
+{% jstemplate %}
+<div class="topologyBalloon" id="[[balloon_id]]">
+  <a href="#close" class="closeTopologyBalloon">&times;</a>
+  <div class="contentBody">
+    [[> table1]]
+  </div>
+  <div class="footer">
+  </div>
+</div>
+{% endjstemplate %}
+{% endblock %}
