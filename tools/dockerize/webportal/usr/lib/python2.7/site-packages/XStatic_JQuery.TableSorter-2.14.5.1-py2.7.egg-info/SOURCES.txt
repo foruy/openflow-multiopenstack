@@ -1,0 +1,15 @@
+.gitignore
+MANIFEST.in
+README.txt
+setup.cfg
+setup.py
+XStatic_JQuery.TableSorter.egg-info/PKG-INFO
+XStatic_JQuery.TableSorter.egg-info/SOURCES.txt
+XStatic_JQuery.TableSorter.egg-info/dependency_links.txt
+XStatic_JQuery.TableSorter.egg-info/namespace_packages.txt
+XStatic_JQuery.TableSorter.egg-info/not-zip-safe
+XStatic_JQuery.TableSorter.egg-info/top_level.txt
+xstatic/__init__.py
+xstatic/pkg/__init__.py
+xstatic/pkg/jquery_tablesorter/__init__.py
+xstatic/pkg/jquery_tablesorter/data/jquery.tablesorter.js

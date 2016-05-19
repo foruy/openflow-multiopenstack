@@ -1,0 +1,37 @@
+Metadata-Version: 1.1
+Name: XStatic
+Version: 1.0.1
+Summary: XStatic base package with minimal support code
+Home-page: http:/bitbucket.org/thomaswaldmann/xstatic
+Author: Thomas Waldmann
+Author-email: tw@waldmann-edv.de
+License: MIT license
+Description: XStatic
+        -------
+        
+        The goal of XStatic family of packages is to provide static file packages
+        with minimal overhead - without selling you some dependencies you don't want.
+        
+        XStatic has some minimal support code for working with the XStatic-* packages.
+        
+        Docs: http://readthedocs.org/docs/xstatic/en/latest/
+        
+        Repository: https://bitbucket.org/thomaswaldmann/xstatic
+        
+        Licenses:
+        
+        * MIT license (for XStatic code)
+        * same license as packaged file (for static file packages)
+        
+        
+Keywords: xstatic static file resource python packages setuptools pypi require
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: System :: Archiving :: Packaging
+Classifier: Topic :: System :: Installation/Setup
+Classifier: Topic :: System :: Software Distribution

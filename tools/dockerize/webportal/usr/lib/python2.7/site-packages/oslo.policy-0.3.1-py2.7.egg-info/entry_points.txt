@@ -1,0 +1,3 @@
+[oslo.config.opts]
+oslo.policy = oslo_policy.opts:list_opts
+

@@ -1,0 +1,16 @@
+.gitignore
+MANIFEST.in
+README.txt
+setup.cfg
+setup.py
+XStatic_Spin.egg-info/PKG-INFO
+XStatic_Spin.egg-info/SOURCES.txt
+XStatic_Spin.egg-info/dependency_links.txt
+XStatic_Spin.egg-info/namespace_packages.txt
+XStatic_Spin.egg-info/not-zip-safe
+XStatic_Spin.egg-info/top_level.txt
+xstatic/__init__.py
+xstatic/pkg/__init__.py
+xstatic/pkg/spin/__init__.py
+xstatic/pkg/spin/data/spin.jquery.js
+xstatic/pkg/spin/data/spin.js

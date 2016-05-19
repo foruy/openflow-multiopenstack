@@ -1,0 +1,25 @@
+Metadata-Version: 1.0
+Name: XStatic-JQuery.quicksearch
+Version: 2.0.3.1
+Summary: JQuery.quicksearch 2.0.3 (XStatic packaging standard)
+Home-page: http://plugins.jquery.com/jquery.quicksearch/
+Author: Radomir Dopieralski
+Author-email: openstack@sheep.art.pl
+License: (same as JQuery.quicksearch)
+Description: XStatic-JQuery.quicksearch
+        --------------
+        
+        JQuery.quicksearch JavaScript library packaged for setuptools (easy_install)
+        / pip.
+        
+        This package is intended to be used by **any** project that needs these files.
+        
+        It intentionally does **not** provide any extra code except some metadata
+        **nor** has any extra requirements. You MAY use some minimal support code from
+        the XStatic base package, if you like.
+        
+        You can find more info about the xstatic packaging way in the package `XStatic`.
+        
+        
+Keywords: jquery_quicksearch xstatic
+Platform: any

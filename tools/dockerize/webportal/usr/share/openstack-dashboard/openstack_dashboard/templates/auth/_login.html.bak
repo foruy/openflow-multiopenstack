@@ -1,0 +1,41 @@
+{% extends "auth/_base.html" %}
+{% load i18n %}
+{% load url from future %}
+
+{% block modal-header %}{% trans "Log In" %}
+  <script type="text/javascript" src="{{ STATIC_URL }}box/js/mootools.js"></script>
+  <script type="text/javascript" src="{{ STATIC_URL }}box/js/swfobject.js"></script>
+  <script type="text/javascript" src="{{ STATIC_URL }}box/js/videobox.js"></script>
+  <link rel="stylesheet" href="{{ STATIC_URL }}box/css/videobox.css" type="text/css" media="screen" />
+  <a href="{{ STATIC_URL }}box/swf/video.flv" rel="vidbox 960 600" title="WordPress Demo" class="btn btn-default secondary cancel" style="margin-left: 48px;opacity: 0.7;font-weight: bold;">WordPress Demo</a>
+  <a href="{{ STATIC_URL }}box/swf/paas.flv" rel="vidbox 960 600" title="PaaS Demo" class="btn btn-default secondary cancel" style="opacity: 0.7;font-weight: bold;">PaaS Demo</a>
+{% endblock %}
+
+{% block form_action %}{% url 'login' %}{% endblock %}
+{% block autocomplete %}{{ HORIZON_CONFIG.password_autocomplete }}{% endblock %}
+
+{% block modal-body %}
+  <fieldset>
+    {% if request.user.is_authenticated and 'next' in request.GET %}
+    <div class="control-group clearfix error">
+      <span class="help-inline"><p>{% trans "You do not have permission to access the resource:" %}</p>
+        <p><b>{{ request.GET.next }}</b></p>
+        <p>{% url 'horizon:user_home' as home_url %}{% blocktrans %}Login as different user or go back to <a href="{{ home_url }}"> home page</a>{% endblocktrans %}</p>
+      </span>
+    </div>
+    {% endif  %}
+    {% if request.COOKIES.logout_reason %}
+    <div class="control-group clearfix error">
+      <span class="help-inline"><p>{{ request.COOKIES.logout_reason }}</p></span>
+    </div>
+    {% endif %}
+    {#% if next %}<input type="hidden" name="{{ redirect_field_name }}" value="{{ next }}" />{% endif %#}
+    {% include "horizon/common/_form_fields.html" %}
+  </fieldset>
+{% endblock %}
+
+{% block modal-footer-submit %}
+  <a href="/dashboard/register/" class="btn btn-default secondary cancel" style="float:left">{% trans "Sign Up" %}</a>
+  <a href="{% url 'getpassword' %}" style="margin-top:6px;margin-left:4px;float:left">{% trans "Forgot your password?" %}</a>
+  <button type="submit" class="btn btn-primary pull-right">{% trans "Login" %}</button>
+{% endblock %}

@@ -1,0 +1,15 @@
+MANIFEST.in
+README.txt
+setup.py
+XStatic_Magic_Search.egg-info/PKG-INFO
+XStatic_Magic_Search.egg-info/SOURCES.txt
+XStatic_Magic_Search.egg-info/dependency_links.txt
+XStatic_Magic_Search.egg-info/namespace_packages.txt
+XStatic_Magic_Search.egg-info/not-zip-safe
+XStatic_Magic_Search.egg-info/top_level.txt
+xstatic/__init__.py
+xstatic/pkg/__init__.py
+xstatic/pkg/magic_search/__init__.py
+xstatic/pkg/magic_search/data/magic_search.html
+xstatic/pkg/magic_search/data/magic_search.js
+xstatic/pkg/magic_search/data/magic_search.scss

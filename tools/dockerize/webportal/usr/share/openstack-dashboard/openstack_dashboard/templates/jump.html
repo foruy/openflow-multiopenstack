@@ -1,0 +1,46 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">^M
+    <meta charset="UTF-8">^M
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">^M
+    <title>Beta Tester Application Form</title>
+    <!--meta http-equiv="refresh" content="5;URL=https://www.daolicloud.com" /-->
+    <link href="{{ STATIC_URL }}daoli/css/pc_register_en.css" rel="stylesheet" type="text/css">
+    <script>
+	var wait = 5;
+	function time() {
+		if(wait==0)return;
+       // 		document.getElementById("num").textContent=wait;
+        		wait--;
+        		setTimeout(function() {
+        		time()
+        		},
+        		1000)
+		}
+    </script>
+</head>
+
+<body onload="time()">
+
+<div class="header">
+    <div class="nav clearfix">
+        <img src="{{ STATIC_URL }}daoli/images/logo_apply.png">
+    </div>
+</div>
+
+<div class="main"><center>
+    <p class="apply-title">
+    </p>
+
+	 <h1 style="margin-top:100px;">Register Successfully !</h1>
+	<p>Pleaseeck your mail box (including spamming folder).</p>
+	<p >If you have any question,please let us know : <a href="mailto:feedback@daolicloud.com">feedback@daolicloud.com</a></p>
+	<a href="/dashboard">Click here to login Page</a>
+</div></center>
+
+<div class="footer">
+       
+    <p class="copyright">DaoliCloud Company All Rights Reserved  ©2011--2015 JING ICP: 13025460&nbsp;	</p>
+
+</div>
+
+</body>
+</html>

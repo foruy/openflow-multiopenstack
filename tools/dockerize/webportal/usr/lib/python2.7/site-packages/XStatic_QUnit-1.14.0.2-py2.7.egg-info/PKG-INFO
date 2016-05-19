@@ -1,0 +1,24 @@
+Metadata-Version: 1.0
+Name: XStatic-QUnit
+Version: 1.14.0.2
+Summary: QUnit 1.14.0 (XStatic packaging standard)
+Home-page: http://qunitjs.com
+Author: Radomir Dopieralski
+Author-email: openstack@sheep.art.pl
+License: (same as QUnit)
+Description: XStatic-QUnit
+        --------------
+        
+        QUnit JavaScript library packaged for setuptools (easy_install) / pip.
+        
+        This package is intended to be used by **any** project that needs these files.
+        
+        It intentionally does **not** provide any extra code except some metadata
+        **nor** has any extra requirements. You MAY use some minimal support code from
+        the XStatic base package, if you like.
+        
+        You can find more info about the xstatic packaging way in the package `XStatic`.
+        
+        
+Keywords: qunit xstatic
+Platform: any

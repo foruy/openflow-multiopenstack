@@ -1,0 +1,15 @@
+.gitignore
+MANIFEST.in
+README.txt
+setup.cfg
+setup.py
+XStatic_JSEncrypt.egg-info/PKG-INFO
+XStatic_JSEncrypt.egg-info/SOURCES.txt
+XStatic_JSEncrypt.egg-info/dependency_links.txt
+XStatic_JSEncrypt.egg-info/namespace_packages.txt
+XStatic_JSEncrypt.egg-info/not-zip-safe
+XStatic_JSEncrypt.egg-info/top_level.txt
+xstatic/__init__.py
+xstatic/pkg/__init__.py
+xstatic/pkg/jsencrypt/__init__.py
+xstatic/pkg/jsencrypt/data/jsencrypt.js

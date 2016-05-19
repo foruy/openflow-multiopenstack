@@ -1,0 +1,22 @@
+#!/usr/bin/env python
+
+import socket,traceback
+host='0.0.0.0'
+port = 12345
+
+if __name__ == '__main__':
+    ret = True
+    s = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
+    s.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1)
+    s.setsockopt(socket.SOL_SOCKET,socket.SO_BROADCAST,1)
+    s.bind((host,port))
+    try:
+        while ret:
+                print "Listen on the port 12345......"
+                sock, addr = s.recvfrom(1024)
+                print "Receive data (%s) from %s" % (sock, addr)
+                s.sendto('ok', addr)
+    except KeyboardInterrupt:
+        ret = False 
+    finally:
+        s.close()

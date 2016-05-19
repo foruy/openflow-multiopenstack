@@ -1,0 +1,15 @@
+MANIFEST.in
+README.txt
+setup.cfg
+setup.py
+XStatic_jQuery.egg-info/PKG-INFO
+XStatic_jQuery.egg-info/SOURCES.txt
+XStatic_jQuery.egg-info/dependency_links.txt
+XStatic_jQuery.egg-info/namespace_packages.txt
+XStatic_jQuery.egg-info/not-zip-safe
+XStatic_jQuery.egg-info/top_level.txt
+xstatic/__init__.py
+xstatic/pkg/__init__.py
+xstatic/pkg/jquery/__init__.py
+xstatic/pkg/jquery/data/jquery.js
+xstatic/pkg/jquery/data/jquery.min.js

@@ -1,0 +1,91 @@
+{% load compress %}
+{% load i18n branding %}
+{% load url from future %}
+
+<!DOCTYPE html>
+<html lang="en" xml:lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    {% include "horizon/_custom_meta.html" %}
+    <title>{% trans "Initializing Node" %} - {% site_branding %}</title>
+    {% include "_stylesheets.html" %}
+    {% include "horizon/_custom_head_js.html" %}
+{% compress js %}
+<script src='{{ STATIC_URL }}horizon/lib/jquery/jquery.js' type='text/javascript' charset="utf-8"></script>
+<script src="{{ STATIC_URL }}horizon/lib/spin.js" type="text/javascript" charset="utf-8"></script>
+
+{% endcompress %}
+
+    <script type="text/javascript">
+      var opts = {lines: 10, length: 4, width: 6, radius:6, corners: 1, direction:1, color: '#000', speed: 1, trail: 60, top: 'auto', left: 'auto'};
+      $(function() {
+        var csrftoken = $("input[name='csrfmiddlewaretoken']").attr('value');
+        var count = $("tr.avail_zone").length;
+        $("tr.avail_zone").each(function() {
+          var $p = $(this).find("td").children("span");
+          var $spin = new Spinner(opts).spin($p.get(0));
+          $.ajax({
+            type: 'post',
+            data: {zone: $(this).attr('id')},
+            headers: {'X-CSRFToken': csrftoken},
+            success: function(data, status){
+              $p.css('background', 'url({{ STATIC_URL }}daoli/images/yes.png) no-repeat');
+            },
+            error: function() {
+              $p.css('background', 'url({{ STATIC_URL }}daoli/images/no.png) no-repeat');
+            },
+            complete: function(){
+              $spin.spin();
+              count--;
+            },
+          });
+        });
+        function refresh() {
+          if (count <= 0) {
+            //location.reload();
+            location.href = '/';
+            return true;
+          }
+          setTimeout(refresh, 1000);
+        };
+        setTimeout(refresh, 1000);
+      });
+    </script>
+  </head>
+  <body id="splash">
+    <div class="container">
+      <div class="row large-rounded">
+        <div id="" class="login">{% csrf_token %}
+          <div class="">
+            <div class="modal-header">
+              <h3>Initializing Node</h3>
+            </div>
+            <div class="modal-body clearfix">
+              <table class="table table-bordered table-striped datatable">
+                <thead>
+                  <tr class="table_caption">
+                    <th class="table_header" colspan="2" data-column="0">
+                  </tr>
+                </thead>
+                <tbody>
+                {% for zone in zones %}
+                  {#% if not zone.disabled %#}
+                  <tr id="{{ zone.id }}" class="avail_zone">
+                    <td>{{ zone.name }}</td>
+                    <td><span style="width:20px;height:20px;margin:0 auto;display:block"></span></td>
+                  </tr>
+                  {#% endif %#}
+                {% endfor %}
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+              <a class="btn btn-default secondary cancel close" style="float:left" href="{% url 'logout' %}">{% trans "Sign Out" %}</a>
+              <a href="/" class="btn btn-default btn-danger">Skip</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

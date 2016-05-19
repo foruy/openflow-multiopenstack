@@ -1,0 +1,13 @@
+MANIFEST.in
+README.txt
+setup.cfg
+setup.py
+XStatic.egg-info/PKG-INFO
+XStatic.egg-info/SOURCES.txt
+XStatic.egg-info/dependency_links.txt
+XStatic.egg-info/namespace_packages.txt
+XStatic.egg-info/not-zip-safe
+XStatic.egg-info/top_level.txt
+xstatic/__init__.py
+xstatic/main.py
+xstatic/pkg/__init__.py

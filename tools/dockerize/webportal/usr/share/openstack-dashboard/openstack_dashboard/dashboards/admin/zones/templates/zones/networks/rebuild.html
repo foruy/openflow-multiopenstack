@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Rebuild Network" %}{% endblock %}
+
+{% block page_header %}
+  {% include "horizon/common/_page_header.html" with title=_("Rebuild Network") %}
+{% endblock %}
+
+{% block main %}
+  {% include "admin/zones/networks/_rebuild.html" %}
+{% endblock %}

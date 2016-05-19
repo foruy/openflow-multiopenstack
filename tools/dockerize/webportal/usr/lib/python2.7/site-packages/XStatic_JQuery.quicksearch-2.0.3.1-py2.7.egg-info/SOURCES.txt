@@ -1,0 +1,15 @@
+.gitignore
+MANIFEST.in
+README.txt
+setup.cfg
+setup.py
+XStatic_JQuery.quicksearch.egg-info/PKG-INFO
+XStatic_JQuery.quicksearch.egg-info/SOURCES.txt
+XStatic_JQuery.quicksearch.egg-info/dependency_links.txt
+XStatic_JQuery.quicksearch.egg-info/namespace_packages.txt
+XStatic_JQuery.quicksearch.egg-info/not-zip-safe
+XStatic_JQuery.quicksearch.egg-info/top_level.txt
+xstatic/__init__.py
+xstatic/pkg/__init__.py
+xstatic/pkg/jquery_quicksearch/__init__.py
+xstatic/pkg/jquery_quicksearch/data/jquery.quicksearch.js

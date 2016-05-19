@@ -1,0 +1,11 @@
+[Unit]
+Description=DaoliAgent Server
+After=syslog.target network.target
+
+[Service]
+Restart=always
+User=root
+ExecStart=/usr/bin/daoliwww
+
+[Install]
+WantedBy=multi-user.target

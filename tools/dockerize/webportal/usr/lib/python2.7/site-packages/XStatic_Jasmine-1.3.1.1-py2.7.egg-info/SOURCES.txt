@@ -1,0 +1,16 @@
+MANIFEST.in
+README.txt
+setup.cfg
+setup.py
+XStatic_Jasmine.egg-info/PKG-INFO
+XStatic_Jasmine.egg-info/SOURCES.txt
+XStatic_Jasmine.egg-info/dependency_links.txt
+XStatic_Jasmine.egg-info/namespace_packages.txt
+XStatic_Jasmine.egg-info/not-zip-safe
+XStatic_Jasmine.egg-info/top_level.txt
+xstatic/__init__.py
+xstatic/pkg/__init__.py
+xstatic/pkg/jasmine/__init__.py
+xstatic/pkg/jasmine/data/jasmine-html.js
+xstatic/pkg/jasmine/data/jasmine.css
+xstatic/pkg/jasmine/data/jasmine.js

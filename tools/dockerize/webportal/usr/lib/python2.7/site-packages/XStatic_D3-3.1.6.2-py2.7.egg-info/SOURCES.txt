@@ -1,0 +1,15 @@
+.gitignore
+MANIFEST.in
+README.txt
+setup.cfg
+setup.py
+XStatic_D3.egg-info/PKG-INFO
+XStatic_D3.egg-info/SOURCES.txt
+XStatic_D3.egg-info/dependency_links.txt
+XStatic_D3.egg-info/namespace_packages.txt
+XStatic_D3.egg-info/not-zip-safe
+XStatic_D3.egg-info/top_level.txt
+xstatic/__init__.py
+xstatic/pkg/__init__.py
+xstatic/pkg/d3/__init__.py
+xstatic/pkg/d3/data/d3.js

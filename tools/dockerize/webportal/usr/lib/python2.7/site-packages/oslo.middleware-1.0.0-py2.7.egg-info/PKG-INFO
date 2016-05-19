@@ -1,0 +1,35 @@
+Metadata-Version: 1.1
+Name: oslo.middleware
+Version: 1.0.0
+Summary: Oslo Middleware library
+Home-page: http://launchpad.net/oslo
+Author: OpenStack
+Author-email: openstack-dev@lists.openstack.org
+License: UNKNOWN
+Description: ===================================
+        oslo.middleware
+        ===================================
+        
+        Oslo middleware library includes components that can be injected into
+        wsgi pipelines to intercept request/response flows. The base class can be
+        enhanced with functionality like add/delete/modification of http headers
+        and support for limiting size/connection etc.
+        
+        * Free software: Apache license
+        * Documentation: http://docs.openstack.org/developer/oslo.middleware
+        * Source: http://git.openstack.org/cgit/openstack/oslo.middleware
+        * Bugs: http://bugs.launchpad.net/oslo.middleware
+        
+        
+Platform: UNKNOWN
+Classifier: Environment :: OpenStack
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3

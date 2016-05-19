@@ -1,0 +1,24 @@
+Metadata-Version: 1.0
+Name: XStatic-Angular-Bootstrap
+Version: 0.11.0.2
+Summary: Angular-Bootstrap 0.11.0 (XStatic packaging standard)
+Home-page: http://angular-ui.github.io/bootstrap/
+Author: Maxime Vidori
+Author-email: maxime.vidori@enovance.com
+License: (same as Angular-Bootstrap)
+Description: XStatic-Angular-Bootstrap
+        -------------------------
+        
+        Angular-Bootstrap JavaScript library packaged for setuptools (easy_install) / pip.
+        
+        This package is intended to be used by **any** project that needs these files.
+        
+        It intentionally does **not** provide any extra code except some metadata
+        **nor** has any extra requirements. You MAY use some minimal support code from
+        the XStatic base package, if you like.
+        
+        You can find more info about the xstatic packaging way in the package `XStatic`.
+        
+        
+Keywords: angular_bootstrap xstatic
+Platform: any

@@ -1,0 +1,30 @@
+Metadata-Version: 1.1
+Name: oslo.db
+Version: 1.7.1
+Summary: oslo.db library
+Home-page: http://launchpad.net/oslo
+Author: OpenStack
+Author-email: openstack-dev@lists.openstack.org
+License: UNKNOWN
+Description: =========
+         oslo.db
+        =========
+        
+        Database connection library for OpenStack
+        
+        * Free software: Apache license
+        * Documentation: http://docs.openstack.org/developer/oslo.db
+        * Source: http://git.openstack.org/cgit/openstack/oslo.db
+        * Bugs: http://bugs.launchpad.net/oslo.db
+        
+        
+Platform: UNKNOWN
+Classifier: Environment :: OpenStack
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 2.6

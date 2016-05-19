@@ -1,0 +1,24 @@
+Metadata-Version: 1.0
+Name: XStatic-Angular
+Version: 1.3.7.0
+Summary: Angular 1.3.7 (XStatic packaging standard)
+Home-page: http://angularjs.org
+Author: Radomir Dopieralski
+Author-email: openstack@sheep.art.pl
+License: (same as Angular)
+Description: XStatic-Angular
+        ---------------
+        
+        Angular JavaScript library packaged for setuptools (easy_install) / pip.
+        
+        This package is intended to be used by **any** project that needs these files.
+        
+        It intentionally does **not** provide any extra code except some metadata
+        **nor** has any extra requirements. You MAY use some minimal support code from
+        the XStatic base package, if you like.
+        
+        You can find more info about the xstatic packaging way in the package `XStatic`.
+        
+        
+Keywords: angular xstatic
+Platform: any

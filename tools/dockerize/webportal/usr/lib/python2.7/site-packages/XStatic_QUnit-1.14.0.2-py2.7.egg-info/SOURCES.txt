@@ -1,0 +1,16 @@
+.gitignore
+MANIFEST.in
+README.txt
+setup.cfg
+setup.py
+XStatic_QUnit.egg-info/PKG-INFO
+XStatic_QUnit.egg-info/SOURCES.txt
+XStatic_QUnit.egg-info/dependency_links.txt
+XStatic_QUnit.egg-info/namespace_packages.txt
+XStatic_QUnit.egg-info/not-zip-safe
+XStatic_QUnit.egg-info/top_level.txt
+xstatic/__init__.py
+xstatic/pkg/__init__.py
+xstatic/pkg/qunit/__init__.py
+xstatic/pkg/qunit/data/qunit.css
+xstatic/pkg/qunit/data/qunit.js

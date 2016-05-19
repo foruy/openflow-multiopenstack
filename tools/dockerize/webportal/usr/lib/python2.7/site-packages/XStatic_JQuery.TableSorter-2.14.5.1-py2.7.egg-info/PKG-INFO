@@ -1,0 +1,24 @@
+Metadata-Version: 1.0
+Name: XStatic-JQuery.TableSorter
+Version: 2.14.5.1
+Summary: JQuery.TableSorter 2.14.5 (XStatic packaging standard)
+Home-page: https://github.com/Mottie/tablesorter
+Author: Radomir Dopieralski
+Author-email: openstack@sheep.art.pl
+License: (same as JQuery.TableSorter)
+Description: XStatic-JQuery.TableSorter
+        --------------
+        
+        JQuery.TableSorter JavaScript library packaged for setuptools (easy_install) / pip.
+        
+        This package is intended to be used by **any** project that needs these files.
+        
+        It intentionally does **not** provide any extra code except some metadata
+        **nor** has any extra requirements. You MAY use some minimal support code from
+        the XStatic base package, if you like.
+        
+        You can find more info about the xstatic packaging way in the package `XStatic`.
+        
+        
+Keywords: jquery_tablesorter xstatic
+Platform: any

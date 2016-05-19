@@ -1,0 +1,34 @@
+Metadata-Version: 1.1
+Name: oslo.log
+Version: 1.0.0
+Summary: oslo.log library
+Home-page: http://launchpad.net/oslo
+Author: OpenStack
+Author-email: openstack-dev@lists.openstack.org
+License: UNKNOWN
+Description: ================================
+        oslo.log -- Oslo Logging Library
+        ================================
+        
+        OpenStack logging configuration library provides standardized configuration for
+        all openstack projects. It also provides custom formatters, handlers and
+        support for context specific logging (like resource id's etc).
+        
+        * Free software: Apache license
+        * Documentation: http://docs.openstack.org/developer/oslo.log
+        * Source: http://git.openstack.org/cgit/openstack/oslo.log
+        * Bugs: http://bugs.launchpad.net/oslo.log
+        
+        
+Platform: UNKNOWN
+Classifier: Environment :: OpenStack
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3

@@ -1,0 +1,16 @@
+.gitignore
+MANIFEST.in
+README.txt
+setup.cfg
+setup.py
+XStatic_JQuery_Migrate.egg-info/PKG-INFO
+XStatic_JQuery_Migrate.egg-info/SOURCES.txt
+XStatic_JQuery_Migrate.egg-info/dependency_links.txt
+XStatic_JQuery_Migrate.egg-info/namespace_packages.txt
+XStatic_JQuery_Migrate.egg-info/not-zip-safe
+XStatic_JQuery_Migrate.egg-info/top_level.txt
+xstatic/__init__.py
+xstatic/pkg/__init__.py
+xstatic/pkg/jquery_migrate/__init__.py
+xstatic/pkg/jquery_migrate/data/jquery-migrate.js
+xstatic/pkg/jquery_migrate/data/jquery-migrate.min.js

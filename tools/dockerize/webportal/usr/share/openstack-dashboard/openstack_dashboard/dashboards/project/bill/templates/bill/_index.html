@@ -1,0 +1,39 @@
+ {% load i18n %}
+
+
+<div id="account">
+	{% comment %}		<h1>My consumption</h1>  {% endcomment %}
+		<div id="account-total">
+	{% comment %}	<h3 class="account-title"><span> The total bill:  </span></h3> {% endcomment %}
+			<p><label > {%  trans "Total consumption:" %} </label><span class="account-total"><span></span>& {% trans "dollar" %};</span></p>
+			<p><label> {% trans "The account balance:" %} </label><span class="account-left"><span></span>& {% trans "dollar" %};</span></p>
+		</div>
+		<div id="account-total-detail">
+	{% comment %} 	<h1 class="account-title"><span>The detailed bill: </span></h1> {% endcomment %}
+			<div id="account-pie"></div>
+		</div>
+		<div id="account-detail">
+			<div id="table_detail" class="table_responsive">
+				<table class="table table-bordered table-striped datatable">
+					<thead>
+						<tr class="caption">
+							<th class="header">
+				      <h3 class="title">{% trans "container" %}:</h3>
+							<div class="actions"></div>
+							</th>
+            </tr>
+						<tr class="tableHead" id="tableHead_trans" name="{% trans "Name" %}" price="{% trans "Price" %}" cost="{% trans "Cost($)" %}">
+						</tr>
+					</thead>
+					<tbody>
+
+					</tbody>
+					<tfoot>
+
+					</tfoot>
+				</table>
+			</div>
+		</div>
+</div>
+
+<script type="text/javascript" src="/static/horizon/js/account.js"></script>

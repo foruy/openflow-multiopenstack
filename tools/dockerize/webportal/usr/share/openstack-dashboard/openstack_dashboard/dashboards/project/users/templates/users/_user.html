@@ -1,0 +1,13 @@
+{% load i18n sizeformat %}
+<div class="quota-dynamic">
+</div>
+<div class="usage_info_wrapper">
+  <form action="?" method="get" id="date_form" class="form-horizontal">
+    <div class="datepicker">
+      {% blocktrans with start=form.start end=form.end %}<span>From: {{ start }} </span><span>To: {{ end }} </span>{% endblocktrans %}
+      <button class="btn btn-primary" type="submit">{% trans "Submit" %}</button>
+    </div>
+</p>
+  </form>
+</div>
+{% include 'horizon/common/_detail_table.html' %}

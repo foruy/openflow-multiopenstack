@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans "Documents" %}{% endblock %}
+
+{% block page_header %}
+{% include "horizon/common/_page_header.html" with title=_("Documents") %}
+{% endblock page_header %}
+
+{% block main %}
+{% include 'project/whitepaper/_index.html' %}
+{% endblock %}

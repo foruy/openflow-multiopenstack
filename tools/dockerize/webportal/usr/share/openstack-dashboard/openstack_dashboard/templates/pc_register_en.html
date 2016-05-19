@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Beta Tester Application Form</title>
+<!--script>
+  //平台、设备和操作系统
+          //检测平台
+          var p = navigator.platform;
+          if((p.indexOf("Win") == 0) ||(p.indexOf("Mac") == 0)){
+              
+          }
+
+
+
+          else if(String(navigator.platform).indexOf("Linux") > -1){
+                if((navigator.userAgent.toLowerCase().match(/android/i) == "android") ||(navigator.userAgent.toLowerCase().match(/ucweb/i) == "ucweb"))
+                        {
+                        window.location.assign("http://www.daolicloud.com/dashboard/register/");
+			}
+
+                 else{
+               		 
+                }       
+
+          }
+
+          else{
+              window.location.assign("http://www.daolicloud.com/dashboard/register/");//Mobile访问
+          }
+</script-->
+		<!--link href="{{ STATIC_URL }}dashboard/css/reg_public.css" rel="stylesheet" type="text/css">
+		<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.0.js"></script>
+		<script src="{{ STATIC_URL }}bootstrap/js/jquery.browser.js"></script>
+		<script src="{{ STATIC_URL }}bootstrap/js/bootstrap.js"></script>
+		<style type="text/css" href="{{ STATIC_URL }}bootstrap/css/bootstrap.css"></style-->
+		<link href="{{ STATIC_URL }}daoli/css/pc_register_en.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<div class="header">
+    <div class="nav clearfix">
+       <a href="/dashboard/"><img src="{{ STATIC_URL }}daoli/images/logo_apply.png"></a>
+    </div>
+</div>
+
+<div class="main">
+    <p class="apply-title">
+	Beta Tester Application Form	
+    </p>
+
+
+    <div class="form-wrap" style="background:#F9F9F9;">
+        <form id="reg_form" action="" method="post" autocomplete="off">
+                {% csrf_token %}
+
+                <div class="form-item">
+                    <div class="form-title"><i>*</i>Username</div>
+                    <div class="form-field">
+                        <ul><li><input type="text" id="username" name="username" placeholder="Choose your username ,1-25 words" onblur="check(this,'usernameValidity','username_msg')"/></li>
+                            <li><p class="msg" id="username_msg"></p></li>
+                       	    <li><label id="usernameValidity" class="validaty"></label></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="form-item">
+                    <div class="form-title"><i>*</i>Email</div>
+                    <div class="form-field">
+			<ul><li><input type="text" id="email" name="email" oncopy="return false;" oncut="return false;" onpaste="return false" placeholder="name@example.com" onblur="check(this,'emailValidity','email_msg')"></li>                 			    <li><p class="msg" id="email_msg"></p></li>
+			<li><label id="emailValidity" class="validaty"></label></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="form-item">
+                    <div class="form-title"><i>*</i>Password</div>
+                    <div class="form-field">
+			<ul><li><input type="password" id="password" name="password" oncopy="return false;" oncut="return false;" onpaste="return false"  onblur="check_password(this,'passwordValidity','password_msg')" placeholder="Please fill in 6-20 words"></li>                 
+		    <li><p class="msg" id="password_msg"></p></li>
+                      <li>  <label id="passwordValidity" class="validaty"></label> </i>
+                      </ul>
+                    </div>
+                </div>
+
+                <div class="form-item">
+                    <div class="form-title"><i>*</i>Confirm Password</div>
+                    <div class="form-field">
+                       <ul><li> <input type="password" id="password_again" name="password_again" oncopy="return false;" oncut="return false;" onpaste="return false"  onblur="check_password_again(this,'againValidity','password_again_msg')"placeholder="Please confirm your password"/></li>
+                       	    <li><p class="msg" id="password_again_msg"></p></li>
+                        <li><label id="againValidity" class="validaty"></label></i>
+                     </ul>
+                    </div>
+	   	</div>
+
+               <div class="form-item">
+                    <div class="form-title"><i>*</i>Mobile Phone</div>
+			<div class="form-field">
+            	    <ul><li><input type="text" id="phone" name="phone"placeholder="Please fill in your mobile"  onblur="check(this,'phoneValidity','phone_msg')"></li>
+                       	  <li><p  class="msg" id="phone_msg"></p></li>
+                       <li> <label id="phoneValidity" class="validaty"></label></li>
+		</ul>	
+                    </div>
+                </div>
+
+                <div class="form-item">
+                    <div class="form-title"><i>*</i><span id="companyLabel">Company Name</span></div>
+                    <div class="form-field">
+                      <ul> <li> <input type="text" id="company" name="company" placeholder="Please fill in your company name" onblur="notnull(this,'companyValidity','company_msg')"></li>
+                       	    <li><p class="msg" id="company_msg"></p></li>
+                        <li><label id="companyValidity" class="validaty"></label></li>
+                        </ul>
+
+                    </div>
+                </div>
+      
+                <div class="form-item-mobile">
+                    <div class="form-title"><i>*</i>Reason for Being a Beta Tester</div><br/>
+                    <div class="form-field">
+                       <textarea id="reason" name="reason" placeholder="Please in 200 words or less"></textarea>
+                    </div>
+                </div>
+
+
+
+                <div class="form-item">
+                    <div class="form-title">&nbsp;</div>
+                    <div class="form-field">
+                        <button id="mobileBtn" type="button">Participate</button>
+                    </div>
+                </div>
+
+            </div>   
+</form>
+</div>
+
+
+<div class="footer">
+       
+    <p class="copyright">DaoliCloud Company All Rights Reserved  ©2011--2015 JING ICP: 13025460&nbsp;	</p>
+
+</div>
+
+<script src="{{ STATIC_URL }}daoli/js/pc_register_en.js"></script>
+</body></html>

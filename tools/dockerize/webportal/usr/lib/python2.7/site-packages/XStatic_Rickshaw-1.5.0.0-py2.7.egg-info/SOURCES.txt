@@ -1,0 +1,16 @@
+.gitignore
+MANIFEST.in
+README.txt
+setup.cfg
+setup.py
+XStatic_Rickshaw.egg-info/PKG-INFO
+XStatic_Rickshaw.egg-info/SOURCES.txt
+XStatic_Rickshaw.egg-info/dependency_links.txt
+XStatic_Rickshaw.egg-info/namespace_packages.txt
+XStatic_Rickshaw.egg-info/not-zip-safe
+XStatic_Rickshaw.egg-info/top_level.txt
+xstatic/__init__.py
+xstatic/pkg/__init__.py
+xstatic/pkg/rickshaw/__init__.py
+xstatic/pkg/rickshaw/data/rickshaw.css
+xstatic/pkg/rickshaw/data/rickshaw.js

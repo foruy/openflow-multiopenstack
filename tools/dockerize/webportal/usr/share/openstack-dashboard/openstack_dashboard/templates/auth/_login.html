@@ -1,0 +1,84 @@
+{% extends "auth/_base.html" %}
+{% load i18n %}
+{% load url from future %}
+
+{% block modal-header %}{% trans "Log In" %}
+  <script type="text/javascript" src="{{ STATIC_URL }}box/js/mootools.js"></script>
+  <script type="text/javascript" src="{{ STATIC_URL }}box/js/swfobject.js"></script>
+  <script type="text/javascript" src="{{ STATIC_URL }}box/js/videobox.js"></script>
+  <link rel="stylesheet" href="{{ STATIC_URL }}box/css/videobox.css" type="text/css" media="screen" />
+  <a href="{{ STATIC_URL }}box/swf/video.flv" rel="vidbox 960 600" title="WordPress Demo" class="btn btn-default secondary cancel" style="margin-left: 48px;opacity: 0.7;font-weight: bold;">WordPress Demo</a>
+  <a href="{{ STATIC_URL }}box/swf/paas.flv" rel="vidbox 960 600" title="PaaS Demo" class="btn btn-default secondary cancel" style="opacity: 0.7;font-weight: bold;">PaaS Demo</a>
+{% endblock %}
+
+{% block form_action %}{% url 'login' %}{% endblock %}
+{% block autocomplete %}{{ HORIZON_CONFIG.password_autocomplete }}{% endblock %}
+
+{% block modal-body %}
+  <div id="control-left">
+    {% include "auth/left.html" %}
+  </div>
+  <fieldset>
+    {% if request.user.is_authenticated and 'next' in request.GET %}
+    <div class="control-group clearfix error">
+      <span class="help-inline"><p>{% trans "You do not have permission to access the resource:" %}</p>
+        <p><b>{{ request.GET.next }}</b></p>
+        <p>{% url 'horizon:user_home' as home_url %}{% blocktrans %}Login as different user or go back to <a href="{{ home_url }}"> home page</a>{% endblocktrans %}</p>
+      </span>
+    </div>
+    {% endif  %}
+    {% if request.COOKIES.logout_reason %}
+    <div class="control-group clearfix error">
+      <span class="help-inline"><p>{{ request.COOKIES.logout_reason }}</p></span>
+    </div>
+    {% endif %}
+    {#% if next %}<input type="hidden" name="{{ redirect_field_name }}" value="{{ next }}" />{% endif %#}
+    {% include "horizon/common/_form_fields.html" %}
+  </fieldset>
+{% endblock %}
+
+{% block modal-footer-submit %}
+  <a href="/dashboard/register/" class="btn btn-default secondary cancel" style="float:left">{% trans "Sign Up" %}</a>
+  <a href="{% url 'getpassword' %}" style="margin-top:6px;margin-left:4px;float:left">{% trans "Forgot your password?" %}</a>
+  <button type="submit" class="btn btn-primary pull-right">{% trans "Login" %}</button>
+  <div id="control-bottom">
+    {% include "auth/bottom.html" %}
+  </div>
+  <script>
+    function getClassNames(clas, tag) {
+      if (document.getElementsByClassName) {
+        return document.getElementsByClassName(clas);
+      } else {
+        var nodes = document.getElementsByTagName(tag), rets=[];
+        for (var i=0; i<nodes.length; i++) {
+          if (hasClass(nodes[i], clas)) {
+            rets.push(nodes[i]);
+          }
+        }
+        return rets;
+      }
+    }
+    var nodes = getClassNames("login", "div"),
+        left = document.getElementById("control-left"),
+        bottom= document.getElementById("control-bottom");
+        
+    if (nodes.length > 0) {
+      nodes[0].style.left = "70%";
+    }
+
+    var attrs = {
+        position: "absolute",
+        top: "-238px", left: "-120%",
+        width: "440px", padding: "20px 20px 10px",
+        borderRadius: "6px",
+        boxShadow: "0px 3px 7px rgba(0,0,0,0.3)",
+        border: "1px solid #DDD"};
+    for (var attr in attrs) {
+      left.style[attr] = attrs[attr]
+    }
+    bottom.style.position="absolute";
+    bottom.style.top="472px";
+    bottom.style.left="-100%";
+    bottom.style.zIndex="-999";
+  </script>
+{% endblock %}

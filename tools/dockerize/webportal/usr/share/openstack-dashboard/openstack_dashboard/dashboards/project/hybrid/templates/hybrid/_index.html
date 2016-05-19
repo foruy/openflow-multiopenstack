@@ -1,0 +1,22 @@
+{% load i18n %}
+{% load url from future %}
+<div id="storage">
+    <p id="storage-p"></p>
+	<p style="font-size:20px;margin-bottom:20px;"><b>{% trans "Please Contact DaoliCloud" %}<b/>  </p>
+			<p><b> {% trans "Address: Room 709, Building 1, 1 Shangdi 10th Street, Haidian District, Beijing 100085, China" %} <b/>   </p>
+					<p> <b> {% trans "Phone: +86 1059713315" %} <b/>  </p>
+							<p> <b> {% trans "Email: nvi.daolicloud.com" %} <b/>  </p>
+	<div class="storage-pic">
+			<img src="{{ STATIC_URL }}dashboard/img/hybrid.png"> 
+	</div>
+</div>
+<style>
+.storage-pic{
+	margin-top:50px;
+	text-align:center;
+}
+#storage-p{
+	font-size:24px;
+	margin-top:30px;
+}
+</style>

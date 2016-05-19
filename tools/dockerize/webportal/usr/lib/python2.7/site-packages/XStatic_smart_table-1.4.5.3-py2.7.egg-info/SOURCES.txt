@@ -1,0 +1,14 @@
+MANIFEST.in
+README.txt
+setup.cfg
+setup.py
+XStatic_smart_table.egg-info/PKG-INFO
+XStatic_smart_table.egg-info/SOURCES.txt
+XStatic_smart_table.egg-info/dependency_links.txt
+XStatic_smart_table.egg-info/namespace_packages.txt
+XStatic_smart_table.egg-info/not-zip-safe
+XStatic_smart_table.egg-info/top_level.txt
+xstatic/__init__.py
+xstatic/pkg/__init__.py
+xstatic/pkg/angular_smart_table/__init__.py
+xstatic/pkg/angular_smart_table/data/smart-table.js
